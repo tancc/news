@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_admin!, :except => [:index]
   def index
     @posts = Post.order('id DESC').all
     @post = Post.last
