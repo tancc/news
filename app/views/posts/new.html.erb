@@ -1,0 +1,9 @@
+<div class="span12">
+  <%= form_for @post do |f| -%>
+    <%= f.text_field :title, :class => "input-xxlarge" %>
+    <%= f.text_area :content , :class => "input-xxlarge" %>
+    <div class="form-actions">
+      <%= f.submit "Submit", :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
