@@ -1,10 +1,16 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.order('id DESC').all
+    @post = Post.last
   end
 
   def show
     @post = Post.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
