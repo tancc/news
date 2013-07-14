@@ -1,0 +1,31 @@
+zh-TW:
+  activerecord:
+    errors:
+      models:
+        order:
+          attributes:
+            name:
+              blank: "填我填我"
+            email:
+              blank: "填我填我"
+              invalid: "格式不對"
+            address:
+              blank: "填我填我"
+            phone:
+              blank: "填我填我"
+        user:
+          attributes:
+            email:
+              blank: "電子郵件忘記填了唷！"
+              taken: "這個電子郵件已經註冊過了！"
+              invalid: "電子郵件的格式不合法唷！"
+            password:
+              blank: "密碼忘記填了唷！"
+              confirmation: "確認密碼輸入不一致唷！"
+              too_short: "密碼太短了！至少要 6 碼"
+            birthday:
+              blank: "生日格式有誤，無法儲存耶！"
+            reset_password_token:
+              invalid: "重設密碼認證不合法唷！"
+            nickname:
+              blank: "暱稱忘記填了唷！"
