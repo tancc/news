@@ -1,14 +1,14 @@
 <div class="row">
   <div class="span12">
     <%= form_for @post do |f| -%>
-      <%= f.label :title %>
+      <%= f.label t :title %>
       <%= f.text_field :title, :class => "input-xxlarge" %>
-      <%= f.label :content %>
+      <%= f.label t(:content) %>
       <%= f.text_area :content , :class => "input-xxlarge" %>
-      <%= f.label :source %>
+      <%= f.label t(:source) %>
       <%= f.text_field :source, :class => "input-xxlarge" %>
       <div class="form-actions">
-        <%= f.submit "Submit", :class => "btn btn-primary" %>
+        <%= f.submit t(:submit), :class => "btn btn-primary" %>
       </div>
     <% end %>
   </div>

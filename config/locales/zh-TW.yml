@@ -14,6 +14,11 @@ zh-TW:
   not_receive_unlock_ins: "沒有收到解鎖信件嘛？"
   # "Didn't receive unlock instructions?"
 
+  title: 標題
+  content: 內容
+  source: 來源
+  submit: 送出
+
   errors: &errors
     date:
     abbr_day_names:
