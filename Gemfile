@@ -7,7 +7,8 @@ gem 'thin'
 gem 'redcarpet'
 gem 'devise'
 gem 'kaminari'
-gem 'kaminari-bootstrap'
+gem 'kaminari-i18n'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

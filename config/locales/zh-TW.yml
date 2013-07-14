@@ -1,0 +1,13 @@
+zh-TW:
+  email: "電子郵件"
+  password: "密碼"
+  sign_in: "登入"
+  sign_up: "註冊"
+  sign_out: "登出"
+  remember_me: "記住我"
+  password_confirmation: "密碼確認"
+  forgot_your_password: "忘記密碼"
+  not_receive_confirm_ins: "沒有收到確認信件嘛？"
+  # "Didn't receive confirmation instructions? "
+  not_receive_unlock_ins: "沒有收到解鎖信件嘛？"
+  # "Didn't receive unlock instructions?"
