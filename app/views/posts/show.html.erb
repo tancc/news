@@ -1,9 +1,9 @@
 <div class="row">
   <div class="span12">
     <div class="post">
-      <%= link_to "Edit", edit_post_path(@post), :class => "btn btn-mini btn-primary pull-right" %>
+      <!-- <%= link_to "Edit", edit_post_path(@post), :class => "btn btn-mini btn-primary pull-right" %> -->
     </div>
-    <h2 class="titile"><%= @post.title %></h2>
+    <h2 class="titile"><%= link_to @post.title %></h2>
     <div class="content"><%= markdown(@post.content) %></div>
     <div class="source"><%= @post.source %></div>
   </div>

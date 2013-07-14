@@ -4,32 +4,23 @@
   </div>
 </div>
 <br>
-
 <div class="row">
+  <div id="paginator" class="span12">
+    <%= paginate @posts, :remote => true %>
+  </div>
   <div class="span3">
-    <ul class="nav nav-tabs nav-stacked">
-      <% @posts.each do |post| %>
-        <li>
-          <%= link_to post_path(post), {:remote => true, "data-type" => "script"} do %>
-            <%= post.title %>
-            <i class="icon-chevron-right pull-right"></i>
-          <% end %>
-        </li>
-      <% end %>
+    <ul id="posts" class="nav nav-tabs nav-stacked">
+      <%= render @posts %>
     </ul>
   </div>
   <div class="span9">
     <div id="content">
-      <div class="page-header">
-        <h1><%= @post.title %></h1>
-      </div>
-      <div class="well">
-        <div class="content">
-          <%= markdown(@post.content) %>
-        </div>
-        <span class="label label-info">Source:</span>
-        <%= link_to @post.source, @post.source %>
-      </div>
+
     </div>
   </div>
 </div>
+
+
+<script>
+$('.nav-stacked > li:first > a').trigger('click');
+</script>
