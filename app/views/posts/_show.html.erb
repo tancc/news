@@ -1,0 +1,10 @@
+<div class="page-header">
+  <h1><%= link_to @post.title %></h1>
+</div>
+<div class="well">
+  <div class="content">
+    <%= markdown(@post.content) %>
+  </div>
+  <span class="label label-info">Source:</span>
+  <%= link_to @post.source, @post.source %>
+</div>

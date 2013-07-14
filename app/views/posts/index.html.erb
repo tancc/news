@@ -1,23 +1,16 @@
-<% if admin_signed_in? %>
-  <div class="row">
-    <div class="span12">
-      <%= link_to("New post", new_post_path , :class => "btn btn-mini btn-primary pull-right")%>
-    </div>
-  </div>
-  <br>
-<% end %>
-
 <div class="row">
+  <div class="span12">
+    <%= link_to("New post", new_post_path , :class => "btn btn-mini btn-primary pull-right")%>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div id="paginator" class="span12">
+    <%= paginate @posts, :remote => true %>
+  </div>
   <div class="span3">
-    <ul class="nav nav-tabs nav-stacked">
-      <% @posts.each do |post| %>
-        <li>
-          <%= link_to post_path(post), {:remote => true, "data-type" => "script"} do %>
-            <%= post.title %>
-            <i class="icon-chevron-right pull-right"></i>
-          <% end %>
-        </li>
-      <% end %>
+    <ul id="posts" class="nav nav-tabs nav-stacked">
+      <%= render @posts %>
     </ul>
   </div>
   <div class="span9">
@@ -26,6 +19,7 @@
     </div>
   </div>
 </div>
+
 
 <script>
 $('.nav-stacked > li:first > a').trigger('click');

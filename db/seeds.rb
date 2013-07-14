@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+for i in 0..100
+  # puts "post#{i}"
+  Post.create(title: "post: #{i}", content: "content: #{i}", source: "source: #{i}")
+end

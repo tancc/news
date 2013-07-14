@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_admin!, :except => [:index, :show]
+  # before_filter :authenticate_admin!, :except => [:index, :show]
   def index
-    @posts = Post.order('id DESC').all
+    @posts = Post.order('id DESC').page(params[:page]).per(10)
     @post = Post.last
   end
 
