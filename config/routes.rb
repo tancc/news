@@ -1,9 +1,16 @@
 News::Application.routes.draw do
-  devise_for :users
+  get "posts/index"
 
-  resources :posts
+  get "posts/show"
 
-  root :to => 'posts#index'
+  get "welcome/index"
+
+  devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
+  namespace :manage do
+    resources :posts
+  end
+
+  root :to => "welcome#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

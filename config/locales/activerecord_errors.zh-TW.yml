@@ -1,0 +1,13 @@
+zh-TW:
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: "填我填我"
+            content:
+              blank: "填我填我"
+              invalid: "格式不對"
+            source:
+              blank: "填我填我"
