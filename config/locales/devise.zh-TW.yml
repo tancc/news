@@ -1,0 +1,60 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+zh-TW:
+  devise:
+    confirmations:
+      confirmed: "您已登入並且完成帳號確認。"
+      send_instructions: "幾分鐘後，您將會收到一封電子郵件指導您如何認證銀的帳號。"
+      send_paranoid_instructions: "如果您的電子郵件已經存在於我們的資料庫，幾分鐘後，您將會收到一封電子郵件指導您如何認證銀的帳號。"
+    failure:
+      already_authenticated: "已登入。"
+      inactive: "您的帳號尚未啟用。"
+      invalid: "電子郵件或是密碼有誤。"
+      invalid_token: "無效的認證代碼。"
+      locked: "您的帳號已被鎖定。"
+      not_found_in_database: "電子郵件或是密碼不存在。"
+      timeout: "您的登入時效過期，請重新登入。"
+      unauthenticated: "您需要先註冊，才能繼續登入使用。"
+      unconfirmed: "您的帳號需要經過確認後，才能繼續使用。"
+    mailer:
+      confirmation_instructions:
+        subject: "確認帳號指示"
+      reset_password_instructions:
+        subject: "重設密碼指示"
+      unlock_instructions:
+        subject: "解鎖帳號指示"
+    omniauth_callbacks:
+      failure: "無法從 %{kind}獲得授權，無法獲得授權原因: \"%{reason}\"。"
+      success: "成功自 %{kind}獲得授權。"
+    passwords:
+      no_token: "此頁面不允許由重新設定密碼之電子郵件內連結探訪，請由其他路徑進入。"
+      send_instructions: "您將在幾分鐘後收到一封含有重新設定密碼的步驟說明的電子郵件。"
+      send_paranoid_instructions: "如果您的電子郵件存在於資料庫，您將在幾分鐘後收到一封含有密碼回復連結的電子郵件。"
+      updated: "您已登入並且完成密碼修改。"
+      updated_not_active: "您已完成密碼修改。"
+    registrations:
+      destroyed: "您的帳號已被取消，希望能再與你相遇。"
+      signed_up: "您已經成功註冊，確認信件已送至您的電子郵件信箱。"
+      signed_up_but_inactive: "您已經成功登入，但您的帳號尚未啟用。"
+      signed_up_but_locked: "您已經成功登入，但您的帳號已經被封鎖。"
+      signed_up_but_unconfirmed: "已經將一封含有確認連結的電子郵件寄送至您的信箱，請至您的電子郵件信箱開啟此封信件並於信件內開啟連結。"
+      update_needs_confirmation: "您已經成功的更新帳號資訊，但我們需確認您的身分，請至您的電子郵件信箱開啟此封信件並於信件內開啟連結。"
+      updated: "您已經成功的更新帳號資訊。"
+    sessions:
+      signed_in: "登入成功。"
+      signed_out: "登出成功。"
+    unlocks:
+      send_instructions: "您將在幾分鐘後收到一封帳號含有解除鎖定的步驟說明電子郵件。"
+      send_paranoid_instructions: "如果您的帳號存在，您將在幾分鐘後收到一封帳號含有解除鎖定的步驟說明電子郵件。"
+      unlocked: "您已成功登入且您的帳號已解鎖。"
+
+  errors:
+    messages:
+      already_confirmed: "已確認，請重新登入"
+      confirmation_period_expired: "請於%{period}內認證，麻煩您重新要求認證一次。"
+      expired: "已過期，麻煩您重新要求認證一次。"
+      not_found: "無法找到"
+      not_locked: "沒有被鎖定"
+      not_saved:
+        one: "有一個錯誤導致%{resource}不能被儲存："
+        other: "有 %{count} 個錯誤導致%{resource}不能被儲存："
