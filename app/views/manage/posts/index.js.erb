@@ -1,4 +1,0 @@
-$('#posts').html('<%= escape_javascript render(@posts) %>');
-$('#paginator').html('<%= j (paginate(@posts, :remote => true).to_s) %>');
-$('#posts').find('a:first').trigger('click');
-$('#posts').find('li:first').addClass('active');
