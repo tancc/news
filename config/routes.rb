@@ -1,6 +1,25 @@
 News::Application.routes.draw do
 
+  get "posts/index"
+
+  get "posts/show"
+
+  get "posts/new"
+
+  get "posts/edit"
+
+  get "posts/create"
+
+  get "posts/update"
+
+  get "posts/destroy"
+
   devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
+
+  get 'manage' => 'manage/dashboard#index'
+  namespace :manage do
+    resources :dashboard, :only => [:index]
+  end
 
   root :to => "welcome#index"
   # The priority is based upon order of creation:
