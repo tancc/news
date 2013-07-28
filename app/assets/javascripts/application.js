@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require showdown
 //= require bootstrap-affix
 //= require bootstrap-alert
 //= require bootstrap-button

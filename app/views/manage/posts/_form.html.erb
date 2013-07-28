@@ -17,7 +17,12 @@
   </div>
   <div class="field">
     <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :id => 'editor' %>
+  </div>
+  <div class="field">
+    <div id="preview">
+
+    </div>
   </div>
   <div class="field">
     <%= f.label :source %><br>
@@ -27,3 +32,18 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+ var converter = new Showdown.converter()
+$(function() {
+  // When using more than one `textarea` on your page, change the following line to match the one you’re after
+  var $textarea = $('#editor'),
+      $preview = $('#preview').insertAfter($textarea),
+      convert = converter.makeHtml;
+
+  // instead of `keyup`, consider using `input` using this plugin: http://mathiasbynens.be/notes/oninput#comment-1
+  $textarea.keyup(function() {
+    $preview.html(convert($textarea.val()));
+  }).trigger('keyup');
+});
+</script>
