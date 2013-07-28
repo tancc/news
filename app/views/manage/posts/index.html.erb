@@ -16,7 +16,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.content %></td>
+        <td><%= markdown(post.content) %></td>
         <td><%= post.source %></td>
         <td><%= link_to 'Show', manage_post_path(post) %></td>
         <td><%= link_to 'Edit', edit_manage_post_path(post) %></td>
