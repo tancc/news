@@ -9,10 +9,11 @@ gem 'devise'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'kaminari-i18n'
+gem "active_model_serializers"
+
 gem 'ancestry'
 gem 'acts_as_commentable'
 gem 'client_side_validations'
-gem 'rabl'
 gem 'oj'
 
 group :development do
