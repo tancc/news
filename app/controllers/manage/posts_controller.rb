@@ -1,10 +1,10 @@
 class Manage::PostsController < ApplicationController
-  before_filter :set_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.all
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -12,6 +12,7 @@ class Manage::PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -29,8 +30,9 @@ class Manage::PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
     respond_to do |format|
-      if @post.update(params[:post])
+      if @post.update_attributes(params[:post])
         format.html { redirect_to [:manage, @post], notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
@@ -41,21 +43,11 @@ class Manage::PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to manage_posts_url }
       format.json { head :no_content }
     end
   end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:title, :content, :source)
-    end
 end
