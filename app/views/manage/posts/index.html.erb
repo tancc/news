@@ -1,31 +1,32 @@
-<h1>Listing posts</h1>
-
-<table>
+<div class="row">
+  <div class="span12">
+  <%= link_to 'New Post', new_manage_post_path, :class => 'btn btn-primary pull-right' %>
+  </div>
+</div>
+<table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Source</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <td>id</td>
+      <td>title</td>
+      <td>source</td>
+      <td>status</td>
+      <td>publish at</td>
+      <td>action</td>
     </tr>
   </thead>
-
   <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= markdown(post.content) %></td>
-        <td><%= post.source %></td>
-        <td><%= link_to 'Show', manage_post_path(post) %></td>
-        <td><%= link_to 'Edit', edit_manage_post_path(post) %></td>
-        <td><%= link_to 'Destroy', manage_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.id %></td>
+      <td><%= link_to(post.title, manage_post_path(post)) %></td>
+      <td><%= post.source %></td>
+      <td>status</td>
+      <td><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+      <td>
+        <%= link_to 'Edit', edit_manage_post_path(post), :class => "btn btn-default btn-mini" %> |
+        <%= link_to 'Destroy', manage_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-mini btn-danger" %>
+      </td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Post', new_manage_post_path %>

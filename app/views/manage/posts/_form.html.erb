@@ -1,4 +1,4 @@
-<%= form_for([:manage, @post]) do |f| %>
+<%= form_for([:manage, @post])  do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -10,27 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content, :id => 'editor' %>
-  </div>
-  <div class="field">
-    <div id="preview">
-
+  <%= f.label :title %>
+  <%= f.text_field :title, :class => 'text_field' %>
+  <%= f.label :source %>
+  <%= f.text_field :source %>
+  <div class="row">
+    <div class="span6">
+      <%= f.label :content%>
+      <%= f.text_area :content, :id => 'editor', :class => "span5", :rows => 7, :placeholder => "use markdown" %>
+    </div>
+    <div class="span6">
+      <label>privew</label>
+      <div id="preview"></div>
     </div>
   </div>
-  <div class="field">
-    <%= f.label :source %><br>
-    <%= f.text_field :source %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit :class => "btn btn-primary" %>
 <% end %>
 
 <script>
@@ -38,7 +32,7 @@
 $(function() {
   // When using more than one `textarea` on your page, change the following line to match the one you’re after
   var $textarea = $('#editor'),
-      $preview = $('#preview').insertAfter($textarea),
+      $preview = $('#preview'),
       convert = converter.makeHtml;
 
   // instead of `keyup`, consider using `input` using this plugin: http://mathiasbynens.be/notes/oninput#comment-1
