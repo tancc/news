@@ -8,6 +8,10 @@ News::Application.routes.draw do
     resources :posts
   end
 
+  namespace :api do
+    resources :posts, :only => [:index, :show]
+  end
+
   root :to => "welcome#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
