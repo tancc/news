@@ -10,6 +10,7 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'kaminari-i18n'
 gem "active_model_serializers"
+gem 'state_machine'
 
 gem 'ancestry'
 gem 'acts_as_commentable'

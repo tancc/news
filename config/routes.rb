@@ -5,7 +5,9 @@ News::Application.routes.draw do
   get 'manage' => 'manage/dashboard#index'
   namespace :manage do
     resources :dashboard, :only => [:index]
-    resources :posts
+    resources :posts do
+      get "state/:event" => "posts#change", :on => :member, :as => "transition"
+    end
   end
 
   namespace :api do
