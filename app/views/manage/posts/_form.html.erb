@@ -24,7 +24,11 @@
       <div id="preview"></div>
     </div>
   </div>
-  <%= f.submit :class => "btn btn-primary" %>
+  <%= submit_tag '儲存', :name => 'save_button', :class => 'btn btn-primary' %>
+  <% if @post.can_confirm_publish? %>
+  <%= submit_tag '儲存並發佈', :name => 'save_and_publish_button', :class => 'btn btn-primary' %>
+  <% end %>
+  文章狀態：<%= raw post_state @post.state %>
 <% end %>
 
 <script>
