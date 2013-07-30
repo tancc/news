@@ -20,6 +20,9 @@ class Manage::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        if params[:save_and_publish_button]
+          @post.confirm_publish
+        end
         format.html { redirect_to [:manage, @post], notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
       else
@@ -33,6 +36,9 @@ class Manage::PostsController < ApplicationController
     @post = Post.find(params[:id])
     respond_to do |format|
       if @post.update_attributes(params[:post])
+        if params[:save_and_publish_button]
+          @post.confirm_publish
+        end
         format.html { redirect_to [:manage, @post], notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
@@ -49,5 +55,16 @@ class Manage::PostsController < ApplicationController
       format.html { redirect_to manage_posts_url }
       format.json { head :no_content }
     end
+  end
+
+  def change
+    post = Post.find(params[:id])
+    case params[:event]
+    when "unpublish"
+      post.confirm_unpublish
+    when "publish"
+      post.confirm_publish
+    end
+    redirect_to(:back)
   end
 end

@@ -20,11 +20,12 @@
       <td><%= post.id %></td>
       <td><%= link_to(post.title, manage_post_path(post)) %></td>
       <td><%= post.source %></td>
-      <td>status</td>
+      <td><%== post_state post.state %></td>
       <td><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></td>
       <td>
         <%= link_to 'Edit', edit_manage_post_path(post), :class => "btn btn-default btn-mini" %> |
         <%= link_to 'Destroy', manage_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-mini btn-danger" %>
+        <%== post_state_event post %>
       </td>
     </tr>
   <% end %>
