@@ -24,4 +24,10 @@ module ApplicationHelper
         flash_type.to_s
     end
   end
+
+  def safe_truncate_content(content, length)
+    pure_text = strip_tags(content).gsub(/\n/, '').gsub(/\r/, '').gsub(/\t/, '').gsub(/&nbsp;/, '')
+    sanitize truncate(pure_text, :length => length, :omission => '…')
+  end
+
 end
