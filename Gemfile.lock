@@ -33,6 +33,7 @@ GEM
     acts_as_commentable (4.0.0)
     ancestry (2.0.0)
       activerecord (>= 3.0.0)
+    angularjs-rails (1.0.7)
     annotate (2.5.0)
       rake
     arel (3.0.2)
@@ -174,6 +175,7 @@ DEPENDENCIES
   active_model_serializers
   acts_as_commentable
   ancestry
+  angularjs-rails
   annotate
   better_errors
   binding_of_caller
