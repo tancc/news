@@ -10,8 +10,9 @@ News::Application.routes.draw do
     end
   end
 
-  namespace :api do
-    resources :posts, :only => [:index, :show]
+  scope :api do
+    get 'api/posts(.:format)' => 'api/posts#index'
+    get 'api/posts/:id(.:format)' => 'api/posts#show'
   end
 
   root :to => "welcome#index"

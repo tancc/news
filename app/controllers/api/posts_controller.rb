@@ -1,16 +1,10 @@
 class Api::PostsController < ApplicationController
 
   def index
-    @posts = Post.all
-    respond_to do |format|
-      format.json { render json: @posts }
-    end
+    render json: Post.all
   end
 
   def show
-    @post = Post.find(params[:id])
-    respond_to do |format|
-      format.json { render json: @post }
-    end
+    render json: Post.find(params[:id])
   end
 end
